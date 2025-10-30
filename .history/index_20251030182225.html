@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Happy Birthday Kolroth 🎉</title>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
-
       /* 🌸 General */
       body {
         background: linear-gradient(135deg, #ffdde1, #ee9ca7);
@@ -73,17 +71,21 @@
       .img-slider {
         width: 100%;
         overflow: hidden;
+        cursor: grab;
         border: 4px solid #ff66b3;
         border-radius: 20px;
         box-shadow: 0 5px 20px rgba(255, 20, 147, 0.3);
         margin-bottom: 60px;
       }
 
+      .img-slider:active {
+        cursor: grabbing;
+      }
+
       .img-track {
         display: flex;
         width: calc(250px * 8);
         animation: scroll 18s linear infinite;
-        will-change: transform;
       }
 
       .img-track img {
@@ -95,17 +97,10 @@
 
       @keyframes scroll {
         from {
-          transform: translate3d(0, 0, 0);
+          transform: translateX(0);
         }
         to {
-          transform: translate3d(-50%, 0, 0);
-        }
-      }
-
-      @media (max-width: 768px) {
-        .img-track {
-          animation: scroll 20s linear infinite;
-          -webkit-transform: translate3d(0, 0, 0);
+          transform: translateX(-50%);
         }
       }
 
@@ -251,7 +246,6 @@
       <h2 id="money">0</h2>
       <button id="btn">Random and get Money! 🙈🧐🙂‍↔️</button>
     </div>
-
     <audio id="birthdaySound" src="./sound/happy.mp3"></audio>
 
     <script>
@@ -275,9 +269,9 @@
         }
       });
 
-      // 🎲 Random number from 1 to 5
+      // Random number
       btn.addEventListener("click", () => {
-        const random = Math.floor(Math.random() * 5) + 1;
+        const random = Math.floor(Math.random() * 10) + 1;
         money.textContent = random;
       });
 
@@ -295,6 +289,7 @@
           ][Math.floor(Math.random() * 4)];
           confetti.style.animationDuration = 2 + Math.random() * 3 + "s";
           document.body.appendChild(confetti);
+
           setTimeout(() => confetti.remove(), 5000);
         }
       }
