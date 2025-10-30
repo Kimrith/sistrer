@@ -97,6 +97,10 @@
         margin-right: 10px;
       }
 
+      .img-slider:hover .img-track {
+        animation-play-state: paused;
+      }
+
       @keyframes scroll {
         from {
           transform: translateX(0);
@@ -188,10 +192,6 @@
         border-radius: 8px;
         cursor: pointer;
         transition: background 0.3s ease;
-      }
-
-      #btn:hover {
-        background: orange;
       }
 
       /* 🎉 Confetti animation */
