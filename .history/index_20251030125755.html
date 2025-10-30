@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday</title>
+  </head>
+  <style>
+    .img-slider {
+      width: 100%;
+      overflow: hidden;
+      cursor: grab; /* cursor look */
+      border: 1px red;
+    }
+
+    .img-slider:active {
+      cursor: grabbing;
+    }
+
+    .img-track {
+      display: flex;
+      width: calc(250px * 8); /* image width * number of images */
+      animation: scroll 20s linear infinite;
+    }
+
+    .img-track img {
+      width: 250px; /* adjust size */
+      height: auto;
+      border-radius: 10px;
+      margin-right: 10px;
+    }
+    .img-slider:hover .img-track {
+      animation-play-state: paused;
+    }
+
+    /* Auto-slide animation */
+    @keyframes scroll {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .video {
+      display: flex;
+    }
+    img {
+      width: 300px;
+    }
+    video {
+      width: 300px;
+    }
+  </style>
+  <body>
+    <div>
+      <div>
+        <h2>Happy Birthday</h2>
+        <p>Chey Kolroth!</p>
+        <h2>Tver cute ey nah!😪😶‍🌫️</h2>
+      </div>
+      <div class="img-slider">
+        <div class="img-track">
+          <img src="./img/1.png" alt="" />
+          <img src="./img/2.png" alt="" />
+          <img src="./img/3.png" alt="" />
+          <img src="./img/4.png" alt="" />
+          <!-- Duplicate images for seamless looping -->
+          <img src="./img/1.png" alt="" />
+          <img src="./img/2.png" alt="" />
+          <img src="./img/3.png" alt="" />
+          <img src="./img/4.png" alt="" />
+        </div>
+      </div>
+
+      <h2>LOTO loto!😒</h2>
+      <div class="video">
+        <video src="./video/1.mp4"></video>
+        <video src="./video/2.mp4"></video>
+        <video src="./video/3.mp4"></video>
+        <video src="./video/4.mp4"></video>
+      </div>
+      <h2>Play Play hv!👽</h2>
+      <button>Click ah ng hh</button>
+      <div>
+        <h2>0</h2>
+        <button>Random and get Money! 🙈🧐🙂‍↔️</button>
+      </div>
+    </div>
+  </body>
+</html>

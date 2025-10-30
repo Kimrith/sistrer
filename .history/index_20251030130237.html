@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday</title>
+    <style>
+      .img-slider {
+        width: 100%;
+        overflow: hidden;
+        cursor: grab;
+        border: 5px rgb(0, 17, 255) solid;
+      }
+
+      .img-slider:active {
+        cursor: grabbing;
+      }
+
+      .img-track {
+        display: flex;
+        width: calc(250px * 8);
+        animation: scroll 20s linear infinite;
+      }
+
+      .img-track img {
+        width: 250px;
+        height: auto;
+        border-radius: 10px;
+        margin-right: 10px;
+      }
+
+      .img-slider:hover .img-track {
+        animation-play-state: paused;
+      }
+
+      @keyframes scroll {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      .video {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        padding: 20px;
+      }
+
+      .video video {
+        width: 300px;
+        height: auto;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .video video:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .random-box {
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      #money {
+        font-size: 3rem;
+        color: green;
+      }
+
+      #btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+        background: gold;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      #btn:hover {
+        background: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div>
+        <h2>Happy Birthday</h2>
+        <p>Chey Kolroth!</p>
+        <h2>Tver cute ey nah! 😪😶‍🌫️</h2>
+      </div>
+
+      <div class="img-slider">
+        <div class="img-track">
+          <img src="./img/1.png" alt="" />
+          <img src="./img/2.png" alt="" />
+          <img src="./img/3.png" alt="" />
+          <img src="./img/4.png" alt="" />
+          <img src="./img/1.png" alt="" />
+          <img src="./img/2.png" alt="" />
+          <img src="./img/3.png" alt="" />
+          <img src="./img/4.png" alt="" />
+        </div>
+      </div>
+
+      <h2>LOTO loto mommy! 😒</h2>
+      <div class="video">
+        <video src="./video/1.mp4" controls></video>
+        <video src="./video/2.mp4" controls></video>
+        <video src="./video/3.mp4" controls></video>
+        <video src="./video/4.mp4" controls></video>
+      </div>
+
+      <h2>Play Play hv! 👽</h2>
+      <button id="toggle">Click ah ng hh</button>
+
+      <div id="game" class="random-box">
+        <h2 id="money">0</h2>
+        <button id="btn">Random and get Money! 🙈🧐🙂‍↔️</button>
+      </div>
+    </div>
+
+    <script>
+      const btn = document.getElementById("btn");
+      const money = document.getElementById("money");
+      const game = document.getElementById("game");
+      const toggle = document.getElementById("toggle");
+
+      // Hide the game section initially
+      let visible = false;
+      game.style.display = "none";
+
+      // Toggle visibility when main button is clicked
+      toggle.addEventListener("click", () => {
+        visible = !visible;
+        game.style.display = visible ? "block" : "none";
+      });
+
+      // Random number from 1 to 10
+      btn.addEventListener("click", () => {
+        const random = Math.floor(Math.random() * 10) + 1;
+        money.textContent = random;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday Kolroth 🎉</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+      /* 🌸 General */
+      body {
+        background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+        font-family: "Poppins", sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 40px;
+        color: #333;
+        overflow-x: hidden;
+      }
+
+      h2,
+      p {
+        margin: 0;
+      }
+
+      /* 🎀 Header section */
+      .header {
+        margin-bottom: 50px;
+        animation: fadeIn 2s ease-in-out;
+      }
+
+      .header h2 {
+        font-size: 3rem;
+        color: #ff1493;
+        text-shadow: 2px 2px 12px rgba(255, 20, 147, 0.6);
+        animation: glow 2s infinite alternate;
+      }
+
+      .header p {
+        font-size: 1.8rem;
+        color: #fff;
+        text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.7);
+      }
+
+      .header h3 {
+        font-size: 1.6rem;
+        color: #5b2cff;
+        margin-top: 10px;
+        text-shadow: 1px 1px 10px rgba(91, 44, 255, 0.3);
+      }
+
+      @keyframes glow {
+        from {
+          text-shadow: 0 0 10px #ff66cc, 0 0 20px #ff1493, 0 0 30px #ff66cc;
+        }
+        to {
+          text-shadow: 0 0 20px #ff99cc, 0 0 40px #ff33cc, 0 0 60px #ff66cc;
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* 🖼️ Image Slider */
+      .img-slider {
+        width: 100%;
+        overflow: hidden;
+        cursor: grab;
+        border: 4px solid #ff66b3;
+        border-radius: 20px;
+        box-shadow: 0 5px 20px rgba(255, 20, 147, 0.3);
+        margin-bottom: 60px;
+      }
+
+      .img-slider:active {
+        cursor: grabbing;
+      }
+
+      .img-track {
+        display: flex;
+        width: calc(250px * 8);
+        animation: scroll 18s linear infinite;
+      }
+
+      .img-track img {
+        width: 250px;
+        height: auto;
+        border-radius: 15px;
+        margin-right: 10px;
+      }
+
+      .img-slider:hover .img-track {
+        animation-play-state: paused;
+      }
+
+      @keyframes scroll {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* 🎥 Video Section */
+      .video {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        padding: 10px;
+      }
+
+      .video video {
+        width: 280px;
+        border-radius: 10px;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(255, 105, 180, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .video video:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 15px rgba(255, 20, 147, 0.5);
+      }
+
+      /* 🎮 Play Section */
+      .play-title {
+        text-align: center;
+        font-size: 2.2rem;
+        color: #ff33cc;
+        text-shadow: 2px 2px 8px rgba(255, 0, 200, 0.5);
+        margin-top: 40px;
+        animation: bounce 2s infinite;
+      }
+
+      #toggle {
+        display: block;
+        margin: 20px auto;
+        padding: 12px 25px;
+        background: linear-gradient(45deg, #ffcc00, #ff6699);
+        border: none;
+        border-radius: 12px;
+        color: white;
+        font-size: 1.1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      #toggle:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 15px rgba(255, 105, 180, 0.6);
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+      }
+
+      /* 💰 Random Game */
+      .random-box {
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      #money {
+        font-size: 3rem;
+        color: #32cd32;
+        text-shadow: 2px 2px 5px rgba(0, 255, 0, 0.3);
+      }
+
+      #btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+        background: #ffcc00;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      #btn:hover {
+        background: orange;
+      }
+
+      /* 🎉 Confetti animation */
+      .confetti {
+        position: fixed;
+        width: 10px;
+        height: 10px;
+        background-color: #ff69b4;
+        top: -10px;
+        animation: fall linear infinite;
+      }
+
+      @keyframes fall {
+        to {
+          transform: translateY(110vh) rotate(720deg);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="header">
+      <h2>🎉 Happy Birthday 🎂</h2>
+      <p>Chey Kolroth!</p>
+      <h3>You’re the cutest! 😪😶‍🌫️💖</h3>
+    </div>
+
+    <div class="img-slider">
+      <div class="img-track">
+        <img src="./img/1.png" alt="" />
+        <img src="./img/2.png" alt="" />
+        <img src="./img/3.png" alt="" />
+        <img src="./img/4.png" alt="" />
+        <img src="./img/1.png" alt="" />
+        <img src="./img/2.png" alt="" />
+        <img src="./img/3.png" alt="" />
+        <img src="./img/4.png" alt="" />
+      </div>
+    </div>
+
+    <h2 class="play-title">LOTO Loto Mommy! 😒</h2>
+
+    <div class="video">
+      <video src="./video/1.mp4" controls></video>
+      <video src="./video/2.mp4" controls></video>
+      <video src="./video/3.mp4" controls></video>
+      <video src="./video/4.mp4" controls></video>
+    </div>
+
+    <h2 class="play-title">Play Play hv! 👽</h2>
+    <button id="toggle">Click ah ng hh</button>
+
+    <div id="game" class="random-box">
+      <h2 id="money">0</h2>
+      <button id="btn">Random and get Money! 🙈🧐🙂‍↔️</button>
+    </div>
+
+    <script>
+      const btn = document.getElementById("btn");
+      const money = document.getElementById("money");
+      const game = document.getElementById("game");
+      const toggle = document.getElementById("toggle");
+
+      // Hide the game initially
+      let visible = false;
+      game.style.display = "none";
+
+      toggle.addEventListener("click", () => {
+        visible = !visible;
+        game.style.display = visible ? "block" : "none";
+        if (visible) {
+          createConfetti();
+        }
+      });
+
+      // Random number
+      btn.addEventListener("click", () => {
+        const random = Math.floor(Math.random() * 10) + 1;
+        money.textContent = random;
+        <audio src="./sound/happy.mp3" controls></audio>;
+      });
+
+      // 🎊 Confetti effect
+      function createConfetti() {
+        for (let i = 0; i < 40; i++) {
+          const confetti = document.createElement("div");
+          confetti.classList.add("confetti");
+          confetti.style.left = Math.random() * 100 + "vw";
+          confetti.style.backgroundColor = [
+            "#ff66b2",
+            "#ffcc00",
+            "#66ff66",
+            "#66ccff",
+          ][Math.floor(Math.random() * 4)];
+          confetti.style.animationDuration = 2 + Math.random() * 3 + "s";
+          document.body.appendChild(confetti);
+
+          setTimeout(() => confetti.remove(), 5000);
+        }
+      }
+    </script>
+  </body>
+</html>
